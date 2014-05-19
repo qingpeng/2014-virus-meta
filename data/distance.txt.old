@@ -1,0 +1,42 @@
+-rw-r--r-- 1 qingpeng tg  8853127168 May 16 11:27 wisconsin_corn-in-wisconsin_corn.out
+-rw-r--r-- 1 qingpeng tg  3830448128 May 16 11:27 kansas_corn-in-iowa_corn.out
+-rw-r--r-- 1 qingpeng tg  8620343296 May 16 11:26 kansas_prairie-in-wisconsin_corn.out
+-rw-r--r-- 1 qingpeng tg 11300503552 May 16 11:26 iowa_prairie-in-wisconsin_restored.out
+-rw-r--r-- 1 qingpeng tg  8748269568 May 16 11:26 wisconsin_prairie-in-wisconsin_prairie.out
+-rw-r--r-- 1 qingpeng tg  8746172416 May 16 11:26 kansas_corn-in-wisconsin_corn.out
+-rw-r--r-- 1 qingpeng tg  3435134976 May 16 11:26 wisconsin_switchgrass-in-wisconsin_restored.out
+-rw-r--r-- 1 qingpeng tg 11241783296 May 16 11:26 iowa_prairie-in-wisconsin_switchgrass.out
+-rw-r--r-- 1 qingpeng tg 11155800064 May 16 11:26 iowa_prairie-in-wisconsin_corn.out
+-rw-r--r-- 1 qingpeng tg  4134535168 May 16 11:26 kansas_corn-in-wisconsin_switchgrass.out
+
+
+iowa_prairie-in-wisconsin_corn.out
+iowa_prairie-in-wisconsin_restored.out
+iowa_prairie-in-wisconsin_switchgrass.out
+kansas_corn-in-iowa_corn.out
+kansas_corn-in-wisconsin_corn.out
+kansas_corn-in-wisconsin_switchgrass.out
+kansas_prairie-in-wisconsin_corn.out
+wisconsin_corn-in-wisconsin_corn.out
+wisconsin_prairie-in-wisconsin_prairie.out
+wisconsin_switchgrass-in-wisconsin_restored.out 
+
+
+17940231
+
+
+#!/bin/bash -login
+#PBS -l walltime=150:00:00,nodes=01:ppn=1,mem=150gb
+#PBS -q main
+#PBS -M qingpeng@gmail.com
+#PBS -m abe
+#PBS -A ged-intel11
+
+module load khmer/1.0.1-rc2
+module load screed
+cd $PBS_O_WORKDIR
+python /mnt/home/qingpeng/Dropbox/Work/Github/khmer_diversity/scripts/get_median.py wisconsin_switchgrass.trimmed.fasta.gz.ht iowa_corn.trimmed.fasta.gz iowa_corn-in-wisconsin_switchgrass.out
+
+
+c.mgr-04.i
+
